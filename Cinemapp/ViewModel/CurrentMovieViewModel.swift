@@ -40,7 +40,7 @@ class CurrentMovieViewModel {
             var favoritesMovies: [FavoriteMovieModel] = []
             
             if let e = error {
-                print(" Error -> \(e.localizedDescription)")              // informar error
+                return
             } else {
                 if let documents = querySnapshot?.documents {
                     for doc in documents {
@@ -119,7 +119,7 @@ class CurrentMovieViewModel {
             var result = false
             
             if let e = error {
-                print("error \(e.localizedDescription)")
+                return
             } else {
                 for movie in favoritesMovies {
                     if movie.title == self.getMovieTitle() {
